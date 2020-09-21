@@ -1,13 +1,22 @@
 function resultdisplay(assault,formELM) {
 	var assaultName;
-		if(assault=="sumida"){
+		if(assault=="clsewer"){
+			assaultName = "[CL] 工事現場 下水道";
+		}
+		else if(assault=="clmafia"){
+			assaultName = "[CL] マフィアの屋敷";
+		}
+		else if(assault=="sumida"){
 			assaultName = "隅田公園";
 		}
 		else if(assault=="city"){
 			assaultName = "シティタワー";
 		}
+		else if(assault=="kwasa"){
+			assaultName = "韓国戦争";
+		}
 		else if(assault=="pastasa"){
-			assaultName = "過去年代";
+			assaultName = "生物兵器";
 		}
 		else if(assault=="sewer"){
 			assaultName = "工事現場 下水道";
@@ -16,19 +25,22 @@ function resultdisplay(assault,formELM) {
 			assaultName = "織田信長";
 		}
 		else if(assault=="hideyosi"){
-			assaultName = "羽柴秀吉";
+			assaultName = "羽柴秀吉・[CL] シティタワー";
 		}
 		else if(assault=="ghost"){
-			assaultName = "幽霊船";
+			assaultName = "トランシルバニア・幽霊船";
 		}
 		else if(assault=="mship"){
 			assaultName = "パラサイト母船";
+		}
+		else if(assault=="busan"){
+			assaultName = "釜山行き";
 		}
 		else if(assault=="emerge"){
 			assaultName = "不時着";
 		}
 		else{
-			assaultName = "その他";
+			assaultName = "マフィアの屋敷・ボルネオ島・種子島宇宙センター";
 		};
 	
 	if(formELM.checked){
