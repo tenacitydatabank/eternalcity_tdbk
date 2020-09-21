@@ -34,16 +34,20 @@ function displaysetdefaultcheckfunc() {
 <body>
 
 <form name="include1" id="include1" style="display:none;">
+<input type="hidden" name="clsewerbaseinclude" id="clsewerbaseinclude" value="2016/08/09 15:00:06">
+<input type="hidden" name="clmafiabaseinclude" id="clmafiabaseinclude" value="2016/08/09 15:00:06">
 <input type="hidden" name="sumidabaseinclude" id="sumidabaseinclude" value="2020/09/02 05:21:30">
 <input type="hidden" name="citybaseinclude" id="citybaseinclude" value="2016/08/09 15:45:06">
+<input type="hidden" name="kwasabaseinclude" id="kwasabaseinclude" value="2016/08/09 15:23:59">
 <input type="hidden" name="pastasabaseinclude" id="pastasabaseinclude" value="2016/08/09 15:23:59">
 <input type="hidden" name="sewerbaseinclude" id="sewerbaseinclude" value="2016/08/09 15:00:06">
+<input type="hidden" name="ghostbaseinclude" id="ghostbaseinclude" value="2016/08/09 15:13:59">
+<input type="hidden" name="otherasabaseinclude" id="otherasabaseinclude" value="2016/08/09 15:43:59">
 <input type="hidden" name="nobunagabaseinclude" id="nobunagabaseinclude" value="2016/08/09 14:58:59">
 <input type="hidden" name="hideyosibaseinclude" id="hideyosibaseinclude" value="2016/08/09 15:45:06">
-<input type="hidden" name="ghostbaseinclude" id="ghostbaseinclude" value="2016/08/09 15:13:59">
 <input type="hidden" name="mshipbaseinclude" id="mshipbaseinclude" value="2016/08/09 15:13:59">
+<input type="hidden" name="busanbaseinclude" id="busanbaseinclude" value="2016/08/09 15:13:59">
 <input type="hidden" name="emergebaseinclude" id="emergebaseinclude" value="2016/08/09 15:43:59">
-<input type="hidden" name="otherasabaseinclude" id="otherasabaseinclude" value="2016/08/09 15:43:59">
 </form>
 <H1 align=center>アサルト時刻計算機</H1>
 <br>
@@ -106,16 +110,20 @@ YYYY:西暦年(必ず４桁)<br />
 <H2>結果表可視設定</H2>
 表示するアサルトの結果表を指定します。
 <center><form name="displayset" id="displayset" style="border:solid 1px #000000; width:200px;">
+<input type="checkbox" name="clsewerdisplayset" onclick="resultdisplay('clsewer',this);">[CL]&nbsp;工事現場&nbsp;下水道<br>
+<input type="checkbox" name="clmafiadisplayset" onclick="resultdisplay('clmafia',this);">[CL]&nbsp;マフィアの屋敷<br>
 <input type="checkbox" name="sumidadisplayset" onclick="resultdisplay('sumida',this);">隅田公園<br>
 <input type="checkbox" name="citydisplayset" onclick="resultdisplay('city',this);">シティタワー<br>
-<input type="checkbox" name="pastasadisplayset" onclick="resultdisplay('pastasa',this);">過去年代<br>
+<input type="checkbox" name="kwasadisplayset" onclick="resultdisplay('kwasa',this);">韓国戦争<br>
+<input type="checkbox" name="pastasadisplayset" onclick="resultdisplay('pastasa',this);">生物兵器<br>
 <input type="checkbox" name="sewerdisplayset" onclick="resultdisplay('sewer',this);">工事現場&nbsp;下水道<br>
+<input type="checkbox" name="ghostdisplayset" onclick="resultdisplay('ghost',this);">トランシルバニア・幽霊船<br>
+<input type="checkbox" name="otherasadisplayset" onclick="resultdisplay('other',this);">マフィアボル種<br>
 <input type="checkbox" name="nobunagadisplayset" onclick="resultdisplay('nobunaga',this);">織田信長<br>
-<input type="checkbox" name="hideyosidisplayset" onclick="resultdisplay('hideyosi',this);">羽柴秀吉<br>
-<input type="checkbox" name="ghostdisplayset" onclick="resultdisplay('ghost',this);">幽霊船<br>
+<input type="checkbox" name="hideyosidisplayset" onclick="resultdisplay('hideyosi',this);">羽柴秀吉・[CL]&nbsp;シティタワー<br>
 <input type="checkbox" name="mshipdisplayset" onclick="resultdisplay('mship',this);">パラサイト母船<br>
-<input type="checkbox" name="emergedisplayset" onclick="resultdisplay('emerge',this);">不時着<br>
-<input type="checkbox" name="otherasadisplayset" onclick="resultdisplay('other',this);">その他</form></center>
+<input type="checkbox" name="busandisplayset" onclick="resultdisplay('busan',this);">釜山行き<br>
+<input type="checkbox" name="emergedisplayset" onclick="resultdisplay('emerge',this);">不時着</form></center>
 <br>
 <script type="text/javascript">
 
@@ -127,30 +135,38 @@ YYYY:西暦年(必ず４桁)<br />
 <br>
 <script type="text/javascript">
 function setBasetimeData() {
+document.basedataset.clsewersetbasetime.value = document.include1.clsewerbaseinclude.value;
+document.basedataset.clmafiasetbasetime.value = document.include1.clmafiabaseinclude.value;
 document.basedataset.sumidasetbasetime.value = document.include1.sumidabaseinclude.value;
 document.basedataset.citysetbasetime.value = document.include1.citybaseinclude.value;
+document.basedataset.kwasasetbasetime.value = document.include1.kwasabaseinclude.value;
 document.basedataset.pastasasetbasetime.value = document.include1.pastasabaseinclude.value;
 document.basedataset.sewersetbasetime.value = document.include1.sewerbaseinclude.value;
+document.basedataset.ghostsetbasetime.value = document.include1.ghostbaseinclude.value;
+document.basedataset.otherasasetbasetime.value = document.include1.otherasabaseinclude.value;
 document.basedataset.nobunagasetbasetime.value = document.include1.nobunagabaseinclude.value;
 document.basedataset.hideyosisetbasetime.value = document.include1.hideyosibaseinclude.value;
-document.basedataset.ghostsetbasetime.value = document.include1.ghostbaseinclude.value;
 document.basedataset.mshipsetbasetime.value = document.include1.mshipbaseinclude.value;
+document.basedataset.busansetbasetime.value = document.include1.busanbaseinclude.value;
 document.basedataset.emergesetbasetime.value = document.include1.emergebaseinclude.value;
-document.basedataset.otherasasetbasetime.value = document.include1.otherasabaseinclude.value;
 }
 </script>
 <center><form name="basedataset" id="basedataset">
 <input type="submit" value="ベースデータ初期設定記入" onclick="setBasetimeData(); return false;"><br>
+[CL] 下水道アサルト：<input type="text" length="19" style="width:140px;" name="clsewersetbasetime" id="clsewersetbasetime"><br>
+[CL] マフィアアサルト：<input type="text" length="19" style="width:140px;" name="clmafiasetbasetime" id="clmafiasetbasetime"><br>
 隅田公園アサルト：<input type="text" length="19" style="width:140px;" name="sumidasetbasetime" id="sumidasetbasetime"><br>
 シティタワーアサルト：<input type="text" length="19" style="width:140px;" name="citysetbasetime" id="citysetbasetime"><br>
-過去年代アサルト：<input type="text" length="19" style="width:140px;" name="pastasasetbasetime" id="pastasasetbasetime"><br>
+韓国戦争アサルト：<input type="text" length="19" style="width:140px;" name="kwasasetbasetime" id="kwasasetbasetime"><br>
+生物兵器アサルト：<input type="text" length="19" style="width:140px;" name="pastasasetbasetime" id="pastasasetbasetime"><br>
 下水道アサルト：<input type="text" length="19" style="width:140px;" name="sewersetbasetime" id="sewersetbasetime"><br>
+トラ・幽霊船アサルト：<input type="text" length="19" style="width:140px;" name="ghostsetbasetime" id="ghostsetbasetime"><br>
+マフィアボル種アサルト：<input type="text" length="19" style="width:140px;" name="otherasasetbasetime" id="otherasasetbasetime"><br>
 織田信長アサルト：<input type="text" length="19" style="width:140px;" name="nobunagasetbasetime" id="nobunagasetbasetime"><br>
 羽柴秀吉アサルト：<input type="text" length="19" style="width:140px;" name="hideyosisetbasetime" id="hideyosisetbasetime"><br>
-幽霊船アサルト：<input type="text" length="19" style="width:140px;" name="ghostsetbasetime" id="ghostsetbasetime"><br>
 パラサイト母船アサルト：<input type="text" length="19" style="width:140px;" name="mshipsetbasetime" id="mshipsetbasetime"><br>
-不時着アサルト：<input type="text" length="19" style="width:140px;" name="emergesetbasetime" id="emergesetbasetime"><br>
-その他アサルト：<input type="text" length="19" style="width:140px;" name="otherasasetbasetime" id="otherasasetbasetime"></form></center>
+釜山行きアサルト：<input type="text" length="19" style="width:140px;" name="busansetbasetime" id="busansetbasetime"><br>
+不時着アサルト：<input type="text" length="19" style="width:140px;" name="emergesetbasetime" id="emergesetbasetime"></form></center>
 <br>
 <H2>計算起点・終点日時指定</H2>
 <center><form name="tagset" id="tagset">
@@ -173,11 +189,23 @@ document.tagset.settagendtime.value = tagendval;
 }
 formtagset();
 </script>
+<Div id="clsewermainDiv" width="100%">
+　
+</Div>
+<br>
+<Div id="clmafiamainDiv" width="100%">
+　
+</Div>
+<br>
 <Div id="sumidamainDiv" width="100%">
 　
 </Div>
 <br>
 <Div id="citymainDiv" width="100%">
+　
+</Div>
+<br>
+<Div id="kwasamainDiv" width="100%">
 　
 </Div>
 <br>
@@ -189,6 +217,14 @@ formtagset();
 　
 </Div>
 <br>
+<Div id="ghostmainDiv" width="100%">
+　
+</Div>
+<br>
+<Div id="othermainDiv" width="100%">
+　
+</Div>
+<br>
 <Div id="nobunagamainDiv" width="100%">
 　
 </Div>
@@ -197,11 +233,11 @@ formtagset();
 　
 </Div>
 <br>
-<Div id="ghostmainDiv" width="100%">
+<Div id="mshipmainDiv" width="100%">
 　
 </Div>
 <br>
-<Div id="mshipmainDiv" width="100%">
+<Div id="busanmainDiv" width="100%">
 　
 </Div>
 <br>
@@ -209,40 +245,49 @@ formtagset();
 　
 </Div>
 <br>
-<Div id="othermainDiv" width="100%">
-　
-</Div>
 <script type="text/javascript">
 function assaulttime() {
+if(document.displayset.clsewerdisplayset.checked){
+	assaulttimeStart((document.basedataset.clsewersetbasetime),105*60*1000,"clsewer")
+}
+if(document.displayset.clmafiadisplayset.checked){
+	assaulttimeStart((document.basedataset.clmafiasetbasetime),140*60*1000,"clmafia")
+}
 if(document.displayset.sumidadisplayset.checked){
  sumidaassaulttime();
 }
 if(document.displayset.citydisplayset.checked){
  cityassaulttime();
 }
+if(document.displayset.kwasadisplayset.checked){
+	assaulttimeStart((document.basedataset.kwasasetbasetime),110*60*1000,"kwasa")
+}
 if(document.displayset.pastasadisplayset.checked){
- pastasaassaulttime();
+	assaulttimeStart((document.basedataset.pastasasetbasetime),40*60*1000,"pastasa")
 }
 if(document.displayset.sewerdisplayset.checked){
  sewerassaulttime();
+}
+if(document.displayset.ghostdisplayset.checked){
+ ghostassaulttime();
+}
+if(document.displayset.otherasadisplayset.checked){
+ otherasaassaulttime();
 }
 if(document.displayset.nobunagadisplayset.checked){
  nobunagaassaulttime();
 }
 if(document.displayset.hideyosidisplayset.checked){
- hideyosiassaulttime();
-}
-if(document.displayset.ghostdisplayset.checked){
- ghostassaulttime();
+	assaulttimeStart((document.basedataset.hideyosisetbasetime),70*60*1000,"hideyosi")
 }
 if(document.displayset.mshipdisplayset.checked){
-	assaulttimeStart((document.basedataset.mshipsetbasetime),4200000,"mship")
+	assaulttimeStart((document.basedataset.mshipsetbasetime),70*60*1000,"mship")
+}
+if(document.displayset.busandisplayset.checked){
+	assaulttimeStart((document.basedataset.busansetbasetime),80*60*1000,"busan")
 }
 if(document.displayset.emergedisplayset.checked){
-	assaulttimeStart((document.basedataset.emergesetbasetime),5400000,"emerge")
-}
-if(document.displayset.otherasadisplayset.checked){
- otherasaassaulttime();
+	assaulttimeStart((document.basedataset.emergesetbasetime),90*60*1000,"emerge")
 }
 }
 
