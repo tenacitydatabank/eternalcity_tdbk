@@ -204,6 +204,7 @@ function assaulttimemaincheck(assault,PrintTime,plustime,tagendtime) {
 	
 	
 	var PrintingTimeAB = PrintTimeDateA.getTime();
+	var i=0;
 	while (PrintingTimeAB < tagendtime) {
 		tempdata = assaulttimemaincheckGetPrintTime(PrintTime,plustime);
 		PrintTime = tempdata;
@@ -244,6 +245,11 @@ function assaulttimemaincheck(assault,PrintTime,plustime,tagendtime) {
 				document.getElementById(target).appendChild(obj1);
 				x++;
 			};
+		};
+		if(i<200){i++}
+		else{
+			alert("The while for printing has excuted too many times.");
+			break;
 		};
 	};
 	
@@ -301,9 +307,15 @@ function getPrintStartTime(basetime,plustime,tagstarttime) {
 }
 
 function getPrintStartTimeCheck(tempdata,plustime,tagstarttime) {
+	var i=0;
 	while (parseFloat(tagstarttime) > tempdata) {
 		tempdataB = getPrintStartTimeCheckPlugin(tempdata,plustime);
 		tempdata = tempdataB;
+		if(i<200){i++;}
+		else{
+			alert("The while for a first result has excuted too many times.");
+			break;
+		};
 	};
 	return tempdata;
 }
@@ -340,6 +352,7 @@ function getPrintStartTimeGetBasedataZeroCheck(tempdata,plustime) {
 	TimeDifAminutes = TimeDifAforcalc.getMinutes();
 	TimeDifAseconds = TimeDifAforcalc.getSeconds();
 	n = (parseFloat(TimeDifAhours) * 3600) + (parseFloat(TimeDifAminutes) * 60) + parseFloat(TimeDifAseconds);
+	var i=0;
 	while (n > 3600) {
 		tempdataB = getPrintStartTimeGetBasedataZeroCheckPlugin(tempdata,plustime);
 		tempdata = tempdataB;
@@ -349,6 +362,11 @@ function getPrintStartTimeGetBasedataZeroCheck(tempdata,plustime) {
 		TimeDifAminutes = TimeDifAforcalc.getMinutes();
 		TimeDifAseconds = TimeDifAforcalc.getSeconds();
 		n = (parseFloat(TimeDifAhours) * 3600) + (parseFloat(TimeDifAminutes) * 60) + parseFloat(TimeDifAseconds);
+		if(i<200){i++;}
+		else{
+			alert("The while for a today's initial has excuted too many times.");
+			break;
+		};
 	};
 	return tempdata;
 }
@@ -376,12 +394,18 @@ function getPrintStartTimeGetBasedataTodayCheck(tempdata,plustime,tagstarttime) 
 	var TagStartDateA = TagStartTimeA.getDate();
 	var tempdataDateA = tempdataDate.getDate();
 	var DateDifA = parseFloat(TagStartDateA) - parseFloat(tempdataDateA);
+	var i=0;
 	while (DateDifA > 0) {
 		tempdataB = getPrintStartTimeGetBasedataTodayCheckPlugin(tempdata,plustime,tagstarttime);
 		tempdata = tempdataB
 		tempdataDate.setTime(tempdata);
 		tempdataDateA = tempdataDate.getDate();
 		DateDifA = parseFloat(TagStartDateA) - parseFloat(tempdataDateA);
+		if(i<200){i++;}
+		else{
+			alert("The while for a today's base has excuted too many times.");
+			break;
+		};
 	};
 	return tempdata;
 }
